@@ -1,33 +1,46 @@
+
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Movietype } from "../_util/type";
 import { MovieCard } from "./MovieCard";
 
-const Upcoming = ({ movies, a }: { movies: Movietype[]; a: boolean }) => {
+const Upcoming = ({
+  movies,
+  a,
+}: {
+  movies: Movietype[];
+  a: boolean;
+}) => {
   return (
-    <div className="mt-[52px]">
-      <div className="max-w-[1280px] m-auto">
-        <div className="flex justify-between">
-          <h3 className="text-[24px] font-semibold">Upcoming</h3>
-          {a ? (
+    <section className="mt-8 w-full sm:mt-10 md:mt-12">
+      <div className="mx-auto w-full max-w-[1280px] px-4 sm:px-6 md:px-8 xl:px-0">
+        {/* Header */}
+        <div className="flex items-center justify-between gap-4">
+          <h3 className="text-xl font-semibold sm:text-2xl">
+            Upcoming
+          </h3>
+
+          {a && (
             <Link
               href="/category/upcoming"
-              className={"flex items-center cursor-pointer"}
+              className="flex shrink-0 items-center text-sm font-medium transition-opacity hover:opacity-70 sm:text-base"
             >
-              See more <ArrowRight className="ml-2 w-4 h-4" />
+              See more
+              <ArrowRight className="ml-1.5 h-4 w-4 sm:ml-2" />
             </Link>
-          ) : (
-            ""
           )}
         </div>
-        <div className="grid grid-cols-5 gap-[32px] mt-[32px]">
-          {movies.map((movie: Movietype, index: number) => (
-            <MovieCard movie={movie} key={index} />
+
+        {/* Movies */}
+        <div className="mt-5 grid grid-cols-2 gap-3 sm:mt-6 sm:grid-cols-3 sm:gap-4 md:grid-cols-4 md:gap-5 lg:mt-8 lg:grid-cols-5 lg:gap-6">
+          {movies?.map((movie: Movietype) => (
+            <MovieCard movie={movie} key={movie.id} />
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
 export default Upcoming;
+

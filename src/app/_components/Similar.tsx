@@ -1,3 +1,4 @@
+
 import { ArrowRight } from "lucide-react";
 import { MovieCard } from "./MovieCard";
 import { Movietype } from "../_util/type";
@@ -13,26 +14,33 @@ const Similar = ({
   id: string;
 }) => {
   return (
-    <div className="mt-[52px]  max-w-[1080px] m-auto ">
-      <div className="flex w-full justify-between mb-8">
-        <h3 className="text-2xl font-semibold">More like this</h3>
-        {a ? (
+    <section className="mx-auto mt-8 w-full max-w-[1080px] px-4 sm:mt-10 sm:px-6 md:mt-12 md:px-8">
+      {/* Header */}
+      <div className="mb-5 flex w-full items-center justify-between gap-4 sm:mb-6 md:mb-8">
+        <h3 className="text-xl font-semibold sm:text-2xl">
+          More like this
+        </h3>
+
+        {a && (
           <Link
             href={`/category/${id}/similar`}
-            className={"flex items-center cursor-pointer"}
+            className="flex shrink-0 items-center text-sm font-medium transition-opacity hover:opacity-70 sm:text-base"
           >
-            See more <ArrowRight className="ml-2 w-4 h-4" />
+            See more
+            <ArrowRight className="ml-1.5 h-4 w-4 sm:ml-2" />
           </Link>
-        ) : (
-          ""
         )}
       </div>
-      <div className="grid grid-cols-5 gap-[32px] mt-[32px]">
-        {movies?.map((movie: Movietype, index: number) => (
-          <MovieCard movie={movie} key={index} />
+
+      {/* Movies */}
+      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 md:grid-cols-4 md:gap-5 lg:grid-cols-5 lg:gap-6">
+        {movies?.map((movie: Movietype) => (
+          <MovieCard movie={movie} key={movie.id} />
         ))}
       </div>
-    </div>
+    </section>
   );
 };
+
 export default Similar;
+

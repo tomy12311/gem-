@@ -1,4 +1,6 @@
+
 "use client";
+
 import { useEffect, useState } from "react";
 import { Input } from "@/components/ui/input";
 import SearchPage from "./SearchResult";
@@ -14,6 +16,7 @@ const Search = () => {
   const [searchValue, setSearchValue] = useState("");
   const router = useRouter();
   const pathname = usePathname();
+
   useEffect(() => {
     if (pathname === "/Search") {
       router.push(`/Search?searchValue=${searchValue}`);
@@ -32,11 +35,32 @@ const Search = () => {
             setOpen(e.target.value.length > 0);
           }}
           onFocus={() => setOpen(true)}
+          className="
+            h-9
+            w-[140px]
+            text-sm
+            sm:h-10
+            sm:w-[220px]
+            md:w-[300px]
+            lg:w-[400px]
+          "
         />
       </PopoverTrigger>
+
       {open && searchValue.length > 0 && pathname !== "/Search" && (
         <PopoverContent
-          className="flex flex-col w-[550px] bg-background border rounded-md  p-3"
+          align="end"
+          sideOffset={8}
+          className="
+            flex
+            w-[calc(100vw-32px)]
+            max-w-[550px]
+            flex-col
+            rounded-md
+            border
+            bg-background
+            p-3
+          "
           onOpenAutoFocus={(e) => e.preventDefault()}
         >
           <SearchPage searchValue={searchValue} />
@@ -47,3 +71,4 @@ const Search = () => {
 };
 
 export default Search;
+
