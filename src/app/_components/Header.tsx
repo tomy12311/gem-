@@ -2,8 +2,7 @@ import { Card } from "@/components/ui/card";
 import { ToggleTheme } from "./theme-provider";
 import Genre from "./Genres";
 import Link from "next/link";
-import Search from "./Search";
-
+import Search from "./Search"
 const Header = () => {
   return (
     <Card className="sticky top-0 z-50 w-full rounded-none">
@@ -31,8 +30,35 @@ const Header = () => {
           </div>
         </div>
 
+
+
+<Link
+  href="/signup"
+  className="group relative inline-flex items-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-red-600 to-rose-500 px-6 py-2.5 text-sm font-bold text-white shadow-lg shadow-red-600/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-red-600/40 active:scale-95"
+>
+  <span className="transition-transform duration-300 group-hover:scale-110">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
+      <polyline points="10 17 15 12 10 7" />
+      <line x1="15" y1="12" x2="3" y2="12" />
+    </svg>
+  </span>
+
+  Нэвтрэх
+</Link>
         <div className="shrink-0">
           <ToggleTheme />
+          
         </div>
 
       </div>

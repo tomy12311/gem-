@@ -19,12 +19,12 @@ const Footer = () => {
             </svg>
 
             <h4 className="text-base font-bold italic text-white">
-              Movie Z
+            Gem cenima
             </h4>
           </div>
 
           <div className="text-sm text-[#FAFAFA]">
-            © 2024 Movie Z. All Rights Reserved.
+            © 2026 Gem cinema. All Rights Reserved.
           </div>
         </div>
 
