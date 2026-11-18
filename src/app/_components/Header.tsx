@@ -32,9 +32,10 @@ const Header = () => {
 
 
 
+
 <Link
   href="/signup"
-  className="group relative inline-flex items-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-red-600 to-rose-500 px-6 py-2.5 text-sm font-bold text-white shadow-lg shadow-red-600/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-red-600/40 active:scale-95"
+  className="group relative inline-flex items-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-gray-900 to-rose-500 px-6 py-2.5 text-sm font-bold text-white shadow-lg shadow-gray-600/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-red-600/40 active:scale-95"
 >
   <span className="transition-transform duration-300 group-hover:scale-110">
     <svg
